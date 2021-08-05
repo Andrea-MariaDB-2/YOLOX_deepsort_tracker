@@ -6,8 +6,9 @@ import cv2
 
 from YOLOX.yolox.data.data_augment import preproc
 from YOLOX.yolox.data.datasets import COCO_CLASSES
-from YOLOX.yolox.exp import get_exp_by_name
-from YOLOX.yolox.utils import fuse_model, get_model_info, postprocess, vis
+from YOLOX.yolox.exp.build import get_exp_by_name
+from YOLOX.yolox.utils import postprocess
+from utils.visualize import vis
 
 
 
@@ -19,7 +20,7 @@ COCO_STD = (0.229, 0.224, 0.225)
 
 class Detector():
     """ 图片检测器 """
-    def __init__(self, model='yolox-s', ckpt='yolox_s.pth'):
+    def __init__(self, model='yolox-s', ckpt='yolox_s.pth.tar'):
         super(Detector, self).__init__()
 
 
